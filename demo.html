@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Box Template</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      display: inline-block;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+    // Function to include the content of index.html into a box
+    async function includeIndexHTML(boxElement) {
+      try {
+        const response = await fetch('src/index.html');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const htmlContent = await response.text();
+        boxElement.innerHTML = htmlContent;
+      } catch (error) {
+        console.error('Error fetching "index.html":', error);
+      }
+    }
+
+    // Create 100 boxes and include index.html into each box
+    async function createBoxes() {
+      const container = document.getElementById("container");
+      for (let i = 0; i < 100; i++) {
+        const box = document.createElement("div");
+        box.className = "box";
+        container.appendChild(box);
+        await includeIndexHTML(box);
+      }
+    }
+
+    createBoxes();
+  </script>
+</body>
+</html>

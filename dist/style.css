@@ -1,0 +1,233 @@
+#orbit_container{
+    width: 8%;
+    margin: 0 auto;
+    padding-top: 10em;
+    
+}
+
+
+ .electron {
+  position: absolute;
+  left: 70px;
+  top: 0;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #01283b;
+  transition: top 1s ease-out, width .4s, height .4s, background-color .8s;
+}
+
+ .electron_deux {
+  position: absolute;
+  left: 25px;
+  top: 90px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #01283b;
+  transition: top 1s ease-out, width .4s, height .4s, background-color .8s;
+}
+
+ .orbit {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #01283b;
+  transition: border-color .7s;
+  
+  z-index:2;
+}
+
+ .orbit_two {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #01283b;
+  transition: border-color .7s;
+  
+  right: 3.05em;
+  top: -9.5em;
+  z-index: 1;
+}
+
+ .electron_two {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #01283b;
+  transition: top 1s ease-out, width .4s, height .4s, background-color .8s;
+}
+
+ .electron_two_deux {
+  position: absolute;
+  left: 150px;
+  top: 175px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #01283b;
+  transition: top 1s ease-out, width .4s, height .4s, background-color .8s;
+}
+
+ .orbit_two:hover {
+  border-color: #ccc;
+}
+ .orbit_two:hover .core {
+  margin-left: 180px;
+}
+ .orbit_two:hover .electron {
+  top: 240px;
+  width: 30px;
+  height: 30px;
+  background-color: #aa3444;
+}
+
+ .core {
+  margin-top: 30px;
+  margin-left: 30px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #01283b;
+  border-radius: 50%;
+  transition: margin-left .8s;
+}
+ .orbit:hover {
+  border-color: #ccc;
+}
+ .orbit:hover .core {
+  margin-left: 180px;
+}
+
+ .orbit:hover .electron {
+  top: 140px;
+  width: 30px;
+  height: 30px;
+  background-color: #aa3444;
+}
+
+ .orbit:hover .electron_deux {
+  top: 200px;
+  width: 15px;
+  height: 15px;
+  background-color: #d68630;
+}
+
+ .orbit_two:hover .electron_two {
+  top: 250px;
+  width: 15px;
+  height: 15px;
+  background-color: #aa3444;
+}
+
+ .orbit_two:hover .electron_two_deux {
+  top: 160px;
+  width: 15px;
+  height: 15px;
+  background-color: #c819d3;
+}
+
+ .orbit_three {
+  position: relative;
+  display: inline-block;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  border: 2px solid #01283b;
+  transition: border-color .7s;
+  animation: spin 3s linear infinite;
+  left: -6.4em;
+  top: -25.7em;
+  z-index: 0;
+}
+
+ .electron_three {
+  position: absolute;
+  left: 220px;
+  top: 10px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #01283b;
+  transition: top 1s ease-out, width .4s, height .4s, background-color .8s;
+}
+
+ .orbit_three:hover .electron_three {
+  top: 340px;
+  width: 15px;
+  height: 15px;
+  background-color: #aa3444;
+}
+
+ .orbit_three:hover {
+  border-color: #ccc;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+.orbit{
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 3000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 3000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 3000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+
+.orbit_two{
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 3000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+
+.orbit_three{
+    
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 3000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+}

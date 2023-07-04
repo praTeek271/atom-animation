@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #orbit_container {
+      width: 8%;
+      margin: 0 auto;
+      padding-top: 10em;
+    }
+
+    .electron,
+    .electron_deux,
+    .electron_two,
+    .electron_two_deux,
+    .electron_three,
+    .electron_three_deux,
+    .electron_four,
+    .electron_four_deux {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #01283b;
+      transition: top 1s ease-out, width .4s, height .4s, background-color .8s;
+    }
+
+    .electron_deux {
+      top: 100%;
+      transform-origin: top center;
+    }
+
+    .electron_two {
+      top: 0;
+      transform-origin: bottom center;
+    }
+
+    .electron_two_deux {
+      top: 100%;
+      transform-origin: top center;
+    }
+
+    .electron_three {
+      top: 0;
+      transform-origin: bottom center;
+    }
+
+    .electron_three_deux {
+      top: 100%;
+      transform-origin: top center;
+    }
+
+    .electron_four {
+      top: 0;
+      transform-origin: bottom center;
+    }
+
+    .electron_four_deux {
+      top: 100%;
+      transform-origin: top center;
+    }
+
+    .orbit,
+    .orbit_two,
+    .orbit_three,
+    .orbit_four {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #01283b;
+      animation: spin 3s linear infinite;
+    }
+
+    .orbit_two {
+      width: 200px;
+      height: 200px;
+      right: 3.05em;
+      top: -9.5em;
+    }
+
+    .orbit_three {
+      width: 310px;
+      height: 310px;
+      left: -6.4em;
+      top: -25.7em;
+    }
+
+    .orbit_four {
+      width: 420px;
+      height: 420px;
+      right: -8.6em;
+      top: -39em;
+    }
+
+    .core {
+      margin-top: 30px;
+      margin-left: 30px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #01283b;
+      border-radius: 50%;
+      transition: margin-left .8s;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="orbit_container">
+    <span class="orbit">
+      <span class="core"></span>
+      <span class="electron"></span>
+      <span class="electron_deux"></span>
+    </span>
+    <span class="orbit_two">
+      <span class="electron_two"></span>
+      <span class="electron_two_deux"></span>
+    </span>
+    <span class="orbit_three">
+      <span class="electron_three"></span>
+      <span class="electron_three_deux"></span>
+    </span>
+    <span class="orbit_four">
+      <span class="electron_four"></span>
+      <span class="electron_four_deux"></span>
+    </span>
+  </div>
+  <script>
+    function createElectrons(atomicNumber) {
+      var div=document.getElementById()
+      // Calculate the radius and angle for each electron
+      const radius = 100;
+      const angleStep = (2 * Math.PI) / atomicNumber;
+
+      for (let i = 0; i < atomicNumber; i++) {
+        // Calculate the position of the electron
+        const x = radius * Math.cos(i * angleStep);
+        const y = radius * Math.sin(i * angleStep);
+
+        // Create the electron element
+        const electron = document.createElement("div");
+        electron.className = "electron";
+        electron.style.left = `${50 + x}%`;
+        electron.style.top = `${50 + y}%`;
+      }
+    }
+  </script>
+</body>
+
+</html>
